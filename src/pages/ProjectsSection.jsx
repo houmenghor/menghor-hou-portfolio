@@ -3,31 +3,11 @@ import { Github, ExternalLink } from "lucide-react"
 import { motion } from "framer-motion"
 import portfolio from '../assets/images/portfolio.png'
 import nike_shoes from '../assets/images/shoes.png'
+import uxui from '../assets/images/uxui.png'
 
 const ProjectsSection = () => {
 
-  const [isLoading, setIsLoading] = useState(true);
   
-    // Handle page load and hide loading screen after 1 second
-    useEffect(() => {
-      // Simulate loading (you can remove the timeout if you want the real load state)
-      const timer = setTimeout(() => {
-        setIsLoading(false); // Hide the loading screen after 1 second
-      }, 1000);
-  
-      return () => clearTimeout(timer); // Cleanup the timer when component is unmounted
-    }, []);
-  
-    // Show loading screen if still loading, otherwise show HeroSection
-    if (isLoading) {
-      return (
-        <div className="loading-screen flex justify-center items-center min-h-screen bg-white text-white dark:bg-secondary dark:text-secondary">
-          <div className="loader">
-            <p>Loading...</p>
-          </div>
-        </div>
-      );
-    }
 
   const projects = [
     {
@@ -43,13 +23,21 @@ const ProjectsSection = () => {
       description: "A personal portfolio website with dark/light theme support and responsive design.",
       image: portfolio,
       technologies: ["React", "Tailwind CSS", "JavaScript"],
-      liveUrl: "#",
-      githubUrl: "https://github.com/houmenghor",
+      liveUrl: "https://menghor-hou-portfolio.vercel.app/",
+      githubUrl: "https://github.com/houmenghor/menghor-hou-portfolio",
     },
+    {
+      title: "UX/UI Design Project",
+      description: "Interactive prototype design for a modern application interface created in Figma.",
+      image: uxui,
+      technologies: ["Figma", "UI Design", "UX Design", "Prototyping"],
+      liveUrl: "https://www.figma.com/proto/NXf2Hm2tQJFf7VwUFsVSD9/Portfolio?page-id=0%3A1&node-id=5-55&viewport=12%2C435%2C0.33&t=NMZ3JVSpVPDswoUD-1&scaling=min-zoom&content-scaling=fixed",
+      githubUrl: "https://github.com/houmenghor"
+    }
   ]
 
   return (
-    <section id="projects" className="py-20 px-4 dark:bg-secondary transition-all duration-300">
+    <section id="projects" className="py-20 px-4 dark:bg-accent transition-all duration-300">
       <div className="container mx-auto">
         <motion.h2
           className="section-title dark:text-white"
@@ -61,7 +49,7 @@ const ProjectsSection = () => {
           Projects
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -99,7 +87,7 @@ const ProjectsSection = () => {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 border dark:border-darkMode dark:hover:bg-darkMode rounded-md text-sm"
+                    className="inline-flex items-center px-4 py-2 border hover:bg-lightMode/5 dark:border-darkMode dark:hover:bg-darkMode rounded-md text-sm"
                   >
                     <Github className="mr-2 h-4 w-4" />
                     GitHub

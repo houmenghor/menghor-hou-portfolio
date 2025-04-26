@@ -1,34 +1,26 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { Loading } from "./Loading";
 
-const LoadingContext = createContext();
+const LoadingContext = createContext({
+  isLoading: false,
+  setIsLoading: () => {},
+});
 
 export function LoadingProvider({ children }) {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Persist loading state on page load (via sessionStorage)
   useEffect(() => {
-    const savedLoadingState = sessionStorage.getItem("isLoading");
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
 
-    if (savedLoadingState === "true") {
-      setIsLoading(true); // Show loading if it was previously set
-    } else {
-      setIsLoading(false); // Hide loading if it's not in the session storage
-    }
-
-    // Set loading state and persist it
-    sessionStorage.setItem("isLoading", "true");
-    setTimeout(() => {
-      sessionStorage.setItem("isLoading", "false");
-      setIsLoading(false); // Stop loading after 2 seconds (you can modify this)
-    }, 1000); // Change this timeout based on your needs
-
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <LoadingContext.Provider value={{ isLoading, setIsLoading }}>
-      {isLoading && <Loading />}
       {children}
+      {isLoading && <Loading />} {/* Loading over the content */}
     </LoadingContext.Provider>
   );
 }

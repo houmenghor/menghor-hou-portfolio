@@ -5,28 +5,6 @@ import { User, Mail, Phone, MapPin, BellIcon as BrandTelegram } from "lucide-rea
 
 const AboutSection = () => {
   
-  const [isLoading, setIsLoading] = useState(true);
-  
-    // Handle page load and hide loading screen after 1 second
-    useEffect(() => {
-      // Simulate loading (you can remove the timeout if you want the real load state)
-      const timer = setTimeout(() => {
-        setIsLoading(false); // Hide the loading screen after 1 second
-      }, 1000);
-  
-      return () => clearTimeout(timer); // Cleanup the timer when component is unmounted
-    }, []);
-  
-    // Show loading screen if still loading, otherwise show HeroSection
-    if (isLoading) {
-      return (
-        <div className="loading-screen flex justify-center items-center min-h-screen bg-white text-white dark:bg-secondary dark:text-secondary">
-          <div className="loader">
-            <p>Loading...</p>
-          </div>
-        </div>
-      );
-    }
 
   return (
     <section id='about' className='py-20 px-4 dark:text-white dark:bg-secondary transition-all duration-300'>

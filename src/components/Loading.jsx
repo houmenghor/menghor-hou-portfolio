@@ -3,9 +3,9 @@ import { motion } from "framer-motion"
 
 export function Loading() {
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-background z-50">
+    <div className="fixed inset-0 flex items-center justify-center dark:bg-secondary">
       <div className="text-center">
-        <div className="relative mb-6">
+        <div className="relative mb-6 ">
           <motion.div
             className="w-32 h-32 rounded-full border-4 border-primary relative overflow-hidden"
             initial={{ opacity: 0, scale: 0.8 }}
