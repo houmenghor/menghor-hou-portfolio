@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.section-title {
+    @apply text-3xl font-bold mb-6 relative inline-block;
+  }
+  
+  .section-title::after {
+    content: "";
+    @apply absolute bottom-0 left-0 w-1/2 h-1 bg-primary;
+  }
+  
+  .skill-bar {
+    @apply h-2 bg-primary rounded-full transition-all duration-1000 ease-in-out;
+  }
