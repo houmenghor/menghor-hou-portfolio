@@ -68,7 +68,7 @@ const ProjectsSection = () => {
                 </div>
 
                 <div className="p-6 flex-grow">
-                  <h3 className="text-xl font-semibold mb-2 ">{project.title}</h3>
+                  <h3 className="text-xl font-semibold mb-2 dark:text-white">{project.title}</h3>
                   <p className="text-muted-foreground mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech, techIndex) => (
