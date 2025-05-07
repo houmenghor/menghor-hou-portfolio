@@ -106,8 +106,8 @@ const SkillsSection = () => {
                 <ul className="list-disc list-inside space-y-2">
                   <li>Learning new technologies</li>
                   <li>Coding</li>
+                  <li>Design</li>
                   <li>Listening to music</li>
-                  <li>Electronic sports</li>
                 </ul>
               </div>
             </div>
