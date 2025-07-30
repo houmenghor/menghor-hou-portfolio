@@ -9,13 +9,12 @@ const SkillsSection = () => {
     { name: "HTML", level: 85 },
     { name: "CSS", level: 80 },
     { name: "Bootstrap", level: 75 },
+    { name: "Laravel", level: 70 },
     { name: "PHP", level: 60 },
-    { name : "UX/UI Designer", level: 60},
+    { name : "UX/UI Designer", level: 50},
     { name: "JavaScript", level: 50 },
     { name: "jQuery", level: 50 },
-    { name : "Tailwindcss", level: 50},
-    { name: "Laravel", level: 50 },
-    { name: "ReactJS", level: 50 },
+    { name: "VueJS", level: 50 },
   ];
 
   const languages = [
