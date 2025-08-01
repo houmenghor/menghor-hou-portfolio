@@ -13,7 +13,6 @@ const SkillsSection = () => {
     { name: "PHP", level: 60 },
     { name : "UX/UI Designer", level: 50},
     { name: "JavaScript", level: 50 },
-    { name: "jQuery", level: 50 },
     { name: "VueJS", level: 50 },
   ];
 
